@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicate Flowers | Atelier Floral & Cadouri Personalizate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap');
+
+        :root {
+            --gold: #d4af37;
+            --dark: #1c1917;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .luxury-text {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.2em;
+        }
+
+        .logo-font {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), 
+                              url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+        }
+
+        .card-hover {
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+        }
+
+        .img-zoom {
+            transition: transform 1.2s ease;
+        }
+
+        .card-hover:hover .img-zoom {
+            transform: scale(1.1);
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .logo-container {
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(184, 134, 11, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-900 leading-relaxed">
+
+    <!-- Navigație Premium -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-stone-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo conform imaginii încărcate -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="relative flex flex-col items-center justify-center logo-container">
+                         <i class="fa-solid fa-gem text-amber-600 text-xl mb-0.5"></i>
+                         <span class="logo-font text-3xl text-stone-800 leading-none">Delicate</span>
+                         <span class="text-[8px] tracking-[0.5em] uppercase text-stone-500 font-bold -mt-1">Flowers</span>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex space-x-10 items-center">
+                    <a href="#acasa" class="text-[10px] uppercase tracking-[0.3em] font-semibold hover:text-amber-600 transition-colors">Acasă</a>
+                    <a href="#servicii" class="text-[10px] uppercase tracking-[0.3em] font-semibold hover:text-amber-600 transition-colors">Servicii</a>
+                    <a href="#colectie" class="text-[10px] uppercase tracking-[0.3em] font-semibold hover:text-amber-600 transition-colors">Colecție</a>
+                    <a href="#contact" class="px-8 py-2.5 bg-stone-900 text-white text-[10px] uppercase tracking-[0.3em] hover:bg-amber-600 transition-all rounded-full shadow-lg">Contact</a>
+                </div>
+                <button class="md:hidden text-stone-800"><i class="fa-solid fa-bars-staggered text-2xl"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="acasa" class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 hero-section"></div>
+        <div class="container mx-auto px-6 lg:px-12 relative z-10 pt-20">
+            <div class="max-w-4xl">
+                <span class="inline-block border border-amber-400 text-amber-400 px-5 py-1.5 text-[10px] uppercase tracking-[0.4em] font-bold mb-8 rounded-full backdrop-blur-sm">Atelier Floral & Cadouri</span>
+                <h1 class="text-6xl md:text-9xl text-white font-bold leading-none mb-8">
+                    Arta <br><span class="italic font-light serif text-amber-200">Emoției.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl font-light leading-relaxed">
+                    Buchete, Box-uri și Baloane create cu pasiune. Livrăm cadouri personalizate la comandă, direct din inima localității Corlăteni.
+                </p>
+                <div class="flex flex-wrap gap-6">
+                    <a href="tel:068490253" class="px-10 py-5 btn-gold text-white text-[11px] uppercase tracking-[0.3em] font-bold rounded-full shadow-2xl flex items-center gap-4">
+                        <i class="fa-solid fa-phone"></i> Comandă Acum
+                    </a>
+                    <a href="#contact" class="px-10 py-5 border border-white/30 text-white text-[11px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-stone-900 transition-all rounded-full backdrop-blur-sm flex items-center gap-3">
+                         Trimite Mesaj <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicii -->
+    <section id="servicii" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-24 reveal-on-scroll">
+                <span class="text-amber-600 uppercase tracking-[0.5em] text-xs font-bold block mb-4">Ce realizăm</span>
+                <h2 class="text-4xl md:text-6xl font-bold uppercase luxury-text">Portofoliul Nostru</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div class="group text-center reveal-on-scroll">
+                    <div class="w-24 h-24 mx-auto mb-8 relative">
+                        <div class="absolute inset-0 bg-stone-50 rounded-full border border-amber-100 group-hover:scale-110 transition-transform duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-3xl text-amber-600">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 uppercase tracking-tighter">Buchete & Box-uri</h3>
+                    <p class="text-stone-500 leading-relaxed font-light italic">Aranjamente florale moderne, de la buchete clasice la cutii elegante (box-uri) pline de prospețime.</p>
+                </div>
+
+                <div class="group text-center reveal-on-scroll" style="transition-delay: 200ms;">
+                    <div class="w-24 h-24 mx-auto mb-8 relative">
+                        <div class="absolute inset-0 bg-stone-50 rounded-full border border-amber-100 group-hover:scale-110 transition-transform duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-3xl text-stone-800">
+                            <i class="fa-solid fa-gift"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 uppercase tracking-tighter">Cadouri Personalizate</h3>
+                    <p class="text-stone-500 leading-relaxed font-light italic">Creăm cadouri unice, adaptate personalității celui care le primește, inclusiv coșuri pentru bărbați.</p>
+                </div>
+
+                <div class="group text-center reveal-on-scroll" style="transition-delay: 400ms;">
+                    <div class="w-24 h-24 mx-auto mb-8 relative">
+                        <div class="absolute inset-0 bg-stone-50 rounded-full border border-amber-100 group-hover:scale-110 transition-transform duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-3xl text-amber-600">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 uppercase tracking-tighter">Baloane cu Heliu</h3>
+                    <p class="text-stone-500 leading-relaxed font-light italic">O gamă variată de baloane colorate pentru a aduce un strop de magie oricărei petreceri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produse Highlight -->
+    <section id="colectie" class="py-32 bg-stone-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20">
+                <div class="reveal-on-scroll">
+                    <h2 class="text-5xl font-bold uppercase luxury-text">Colecția Diamond</h2>
+                    <div class="w-24 h-1 bg-amber-600 mt-4"></div>
+                </div>
+                <p class="max-w-md text-stone-500 italic mt-6 md:mt-0">Livrăm la comandă în tot raionul, garantând calitatea și aspectul impecabil.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Buchet Box -->
+                <div class="card-hover group relative bg-white rounded-3xl overflow-hidden shadow-sm reveal-on-scroll">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=800&auto=format&fit=crop" alt="Box cu flori" class="img-zoom w-full h-full object-cover">
+                    </div>
+                    <div class="p-10 border-b-8 border-stone-100">
+                        <span class="text-[10px] uppercase tracking-widest text-amber-600 font-bold mb-3 block">Flori în Cutie</span>
+                        <h3 class="text-2xl font-bold mb-3 uppercase">Elegance Box</h3>
+                        <p class="text-stone-500 text-sm font-light">Un cadou sofisticat care nu necesită vază și rămâne proaspăt mai mult timp.</p>
+                    </div>
+                </div>
+
+                <!-- Baloane -->
+                <div class="card-hover group relative bg-stone-900 rounded-3xl overflow-hidden shadow-2xl reveal-on-scroll" style="transition-delay: 200ms;">
+                    <div class="aspect-[4/5] overflow-hidden opacity-90 group-hover:opacity-100 transition-all duration-700">
+                        <img src="https://images.unsplash.com/photo-1530103043960-ef38714abb15?q=80&w=800&auto=format&fit=crop" alt="Baloane festive" class="img-zoom w-full h-full object-cover">
+                    </div>
+                    <div class="p-10 text-white">
+                        <span class="text-[10px] uppercase tracking-widest text-amber-400 font-bold mb-3 block">Party Decor</span>
+                        <h3 class="text-2xl font-bold mb-3 uppercase tracking-tight">Celebration 🎈</h3>
+                        <p class="text-stone-400 text-sm font-light italic">Baloane cu heliu personalizate pentru momente de neuitat.</p>
+                    </div>
+                </div>
+
+                <!-- Cadouri Barbati -->
+                <div class="card-hover group relative bg-white rounded-3xl overflow-hidden shadow-sm reveal-on-scroll" style="transition-delay: 400ms;">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop" alt="Cadou barbati" class="img-zoom w-full h-full object-cover">
+                    </div>
+                    <div class="p-10 border-b-8 border-stone-100">
+                        <span class="text-[10px] uppercase tracking-widest text-amber-600 font-bold mb-3 block">Custom Gifts</span>
+                        <h3 class="text-2xl font-bold mb-3 uppercase">Gentleman Pack</h3>
+                        <p class="text-stone-500 text-sm font-light">Selecție de băuturi și delicatese, ambalate într-un stil masculin și rafinat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectiune Contact -->
+    <section id="contact" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-stone-900 text-white rounded-[3rem] p-12 lg:p-20 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-80 h-80 bg-amber-500/5 rounded-full -mr-40 -mt-40"></div>
+                
+                <div class="relative z-10 flex flex-col lg:flex-row gap-20">
+                    <div class="lg:w-1/3">
+                         <div class="flex flex-col items-center lg:items-start mb-12">
+                             <i class="fa-solid fa-gem text-amber-400 text-3xl mb-2"></i>
+                             <span class="logo-font text-5xl text-white">Delicate</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-6 luxury-text text-amber-400">DM pentru detalii 💌</h3>
+                        <p class="text-stone-400 mb-10 font-light text-lg">Ești gata să faci o surpriză? Contactează-ne direct pentru o ofertă personalizată.</p>
+                        
+                        <div class="space-y-6">
+                            <a href="tel:068490253" class="flex items-center gap-6 group hover:text-amber-400 transition-colors">
+                                <div class="w-12 h-12 rounded-full border border-stone-700 flex items-center justify-center group-hover:bg-amber-600 group-hover:border-amber-600 transition-all text-white">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <span class="text-xl font-bold tracking-wider">068 490 253</span>
+                            </a>
+                            <div class="flex items-center gap-6 text-stone-400">
+                                <div class="w-12 h-12 rounded-full border border-stone-700 flex items-center justify-center">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <span class="text-lg">Corlăteni, Rîșcani</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-2/3 bg-white/5 p-1 rounded-[2.5rem] backdrop-blur-sm">
+                        <form id="contactForm" class="bg-stone-900 p-8 lg:p-12 rounded-[2.4rem] grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest text-stone-500 ml-4 font-bold">Numele tău</label>
+                                <input type="text" placeholder="Ex: Popescu Ion" class="w-full bg-stone-800 border border-stone-700 rounded-2xl px-6 py-4 outline-none focus:border-amber-500 transition-all text-white" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest text-stone-500 ml-4 font-bold">Telefon</label>
+                                <input type="tel" placeholder="0XXXXXX" class="w-full bg-stone-800 border border-stone-700 rounded-2xl px-6 py-4 outline-none focus:border-amber-500 transition-all text-white" required>
+                            </div>
+                            <div class="md:col-span-2 space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest text-stone-500 ml-4 font-bold">Mesajul tău</label>
+                                <textarea rows="4" placeholder="Ce dorești să comanzi?" class="w-full bg-stone-800 border border-stone-700 rounded-2xl px-6 py-4 outline-none focus:border-amber-500 transition-all text-white resize-none" required></textarea>
+                            </div>
+                            <button type="submit" class="md:col-span-2 w-full bg-amber-600 text-white py-5 rounded-2xl text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-amber-700 transition-all shadow-xl">Trimite Cererea</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-stone-100 text-stone-900">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="mb-12 flex flex-col items-center">
+                <i class="fa-solid fa-gem text-amber-600 text-3xl mb-1"></i>
+                <span class="logo-font text-5xl leading-none">Delicate</span>
+                <span class="text-[10px] tracking-[0.7em] text-stone-400 uppercase font-bold mt-2">Diamond Flowers</span>
+            </div>
+            
+            <div class="flex justify-center gap-10 mb-16">
+                <a href="#" class="w-14 h-14 rounded-full border border-stone-200 flex items-center justify-center hover:bg-amber-600 hover:border-amber-600 hover:text-white transition-all text-stone-600"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="w-14 h-14 rounded-full border border-stone-200 flex items-center justify-center hover:bg-amber-600 hover:border-amber-600 hover:text-white transition-all text-stone-600"><i class="fa-brands fa-facebook-f text-xl"></i></a>
+                <a href="viber://chat?number=37368490253" class="w-14 h-14 rounded-full border border-stone-200 flex items-center justify-center hover:bg-amber-600 hover:border-amber-600 hover:text-white transition-all text-stone-600"><i class="fa-brands fa-viber text-xl"></i></a>
+            </div>
+            
+            <div class="max-w-2xl mx-auto border-t border-stone-200 pt-12">
+                <p class="text-[11px] text-stone-500 tracking-[0.2em] uppercase leading-loose">
+                    📍 Corlăteni, Rîșcani, Republica Moldova <br>
+                    📧 Contact: mail.ru | 📞 068 490 253 <br>
+                    &copy; 2024 Delicate Flowers. Livrare la comandă.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal elements on scroll
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Sticky Nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.querySelector('.max-w-7xl').classList.replace('h-20', 'h-16');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.querySelector('.max-w-7xl').classList.replace('h-16', 'h-20');
+            }
+        });
+
+        // Form Submit
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Cererea dumneavoastră a fost trimisă cu succes! Vă vom contacta în cel mai scurt timp.');
+        });
+    </script>
+</body>
+</html>
